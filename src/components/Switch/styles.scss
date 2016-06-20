@@ -1,0 +1,47 @@
+$unit: 2rem;
+
+$switch-width: 2.5 * $unit;
+
+.wrap {
+  margin: 0.25 * $unit;
+}
+
+.switch {
+  display: inline-block;
+  position: relative;
+  border-radius: $unit;
+  width: $switch-width;
+  height: $unit;
+  background-color: #ddd;
+  &.checked {
+    background-color: #008CBA;
+  }
+}
+
+$thumb-size: 0.75 * $unit;
+$thumb-offset: 0.5 * ($unit - $thumb-size);
+$thumb-offset-checked: $switch-width - ($thumb-size + $thumb-offset);
+
+.thumb {
+    position: absolute;
+    top: $thumb-offset;
+    left: $thumb-offset;
+    width: $thumb-size;
+    height: $thumb-size;
+    border-radius: $unit;
+    background-color: #fff;
+    transition: left 0.15s ease-out;
+    .checked & {
+      left: $thumb-offset-checked;
+    }
+}
+
+$label-text-size: 0.5 * $unit;
+
+.text {
+  display:inline-block;
+  vertical-align: top;
+  font-size: $label-text-size;
+  line-height: $unit;
+  padding-left: $thumb-offset;
+}

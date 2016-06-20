@@ -1,0 +1,10 @@
+.grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+.cell {
+  align-items: strech;
+  flex: 0 0 50%;
+}

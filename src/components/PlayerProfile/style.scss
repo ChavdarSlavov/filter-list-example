@@ -1,0 +1,19 @@
+@import "../shared/styles/mixins/common.scss";
+
+.userProfile {
+	@extend %clearfix;
+	background-color: #333;
+	padding: 20px;
+	color: #ccc;
+	margin: 5px;
+
+	h3 {
+		margin-top: 0;
+	}
+}
+
+.picture {
+	float: left;
+	margin: 0 20px 20px 0;
+	height: 200px;
+}
