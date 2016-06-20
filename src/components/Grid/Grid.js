@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import styles from './styles.scss';
 
 export default class Grid extends Component {
@@ -17,10 +18,22 @@ export default class Grid extends Component {
   }
 
   render(){
+    const transitionNames = {
+      enter: 'enter',
+      leave: 'leave',
+      appear: 'appear'
+    };
     return (
-      <div className={styles.grid}>
+      <ReactCSSTransitionGroup
+        className={styles.grid}
+        transitionAppear={true}
+        transitionName={transitionNames}
+        transitionAppearTimeout={300}
+        transitionEnterTimeout={300}
+        transitionLeaveTimeout={300}
+      >
         {this.wrapChildren(this.props.children)}
-      </div>
+      </ReactCSSTransitionGroup>
     );
   }
 }
